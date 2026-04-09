@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Planet Walker - 3D Space Adventure</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div id="game-container" tabindex="0">
+        <!-- Start Screen -->
+        <div id="start-screen" class="screen active">
+            <div class="starfield-bg"></div>
+            <div class="content">
+                <h1 class="title">PLANET WALKER</h1>
+                <p class="subtitle">EXPLORE THE EARTH</p>
+                <canvas id="menu-canvas" width="200" height="200"></canvas>
+                <button id="start-btn" class="btn btn-primary">START GAME</button>
+                <div class="high-score-display">
+                    HIGH SCORE: <span id="menu-high-score">0</span>
+                </div>
+                <div class="controls-info">
+                    <kbd>WASD</kbd> or <kbd>Arrows</kbd> Walk Around<br>
+                    Collect the golden gems!
+                </div>
+            </div>
+        </div>
+
+        <!-- Game Screen -->
+        <div id="game-screen" class="screen">
+            <canvas id="game-canvas"></canvas>
+            <div class="hud">
+                <div class="hud-left">
+                    <div class="score-display">
+                        <span class="label">SCORE</span>
+                        <span id="current-score" class="value">0</span>
+                    </div>
+                    <div class="best-display">
+                        <span class="label">BEST</span>
+                        <span id="best-score" class="value">0</span>
+                    </div>
+                </div>
+                <div class="hud-bottom">
+                    <span class="label">TIME LEFT</span>
+                    <span id="time-display" class="value">1:00</span>
+                </div>
+            </div>
+        </div>
+
+        <!-- Game Over Screen -->
+        <div id="gameover-screen" class="screen">
+            <div class="starfield-bg"></div>
+            <div class="content">
+                <h1 class="gameover-title">GAME OVER</h1>
+                <div id="new-highscore-msg" class="new-highscore hidden">NEW HIGH SCORE!</div>
+                <div class="final-score">
+                    <span class="label">FINAL SCORE</span>
+                    <span id="final-score-value" class="value">0</span>
+                </div>
+                <div class="stats-row">
+                    <div class="stat">
+                        <span class="label">TIME PLAYED</span>
+                        <span id="stat-time" class="value">0:00</span>
+                    </div>
+                    <div class="stat">
+                        <span class="label">GEMS COLLECTED</span>
+                        <span id="stat-collectibles" class="value">0</span>
+                    </div>
+                </div>
+                <div class="chart-container">
+                    <div class="chart-title">SCORE OVER TIME</div>
+                    <canvas id="score-chart"></canvas>
+                </div>
+                <div class="button-row">
+                    <button id="play-again-btn" class="btn btn-primary">PLAY AGAIN</button>
+                    <button id="main-menu-btn" class="btn btn-secondary">MAIN MENU</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="game.js"></script>
+</body>
+</html>
